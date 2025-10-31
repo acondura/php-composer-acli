@@ -15,7 +15,7 @@ RUN set -eux; \
         libfreetype6-dev \
         libxml2-dev \
         unzip \
-        default-mysql-client; \
+        default-mysql-client \
         openssh-client; \
     # Install PHP extensions
     docker-php-ext-install zip gd xml pdo_mysql; \
