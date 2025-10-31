@@ -16,6 +16,7 @@ RUN set -eux; \
         libxml2-dev \
         unzip \
         default-mysql-client; \
+        openssh-client; \
     # Install PHP extensions
     docker-php-ext-install zip gd xml pdo_mysql; \
     # Install Acquia CLI
