@@ -5,6 +5,8 @@ FROM php:8.3-cli
 # This reduces image size and build time
 RUN set -eux; \
     apt-get update && apt-get upgrade -y; \
+    # Add the NodeSource repository
+    curl -fsSL https://deb.nodesource.com/setup_24.x | bash -; \
     # Install dependencies
     apt-get install -y --no-install-recommends \
         curl \
@@ -16,7 +18,8 @@ RUN set -eux; \
         libxml2-dev \
         unzip \
         default-mysql-client \
-        openssh-client; \
+        openssh-client \
+        nodejs; \
     # Install PHP extensions
     docker-php-ext-install zip gd xml pdo_mysql; \
     # Install Acquia CLI
